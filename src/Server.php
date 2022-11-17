@@ -663,7 +663,7 @@ class Server
             case 'events':
                 $package = json_decode($request->rawBody(), true);
                 if (!$package) {
-                    return $connection->send(new Response(401, [], 'Invalid signature'));
+                    return $connection->send(new Response(401, [], 'Get data is empty'));
                 }
                 $channels = $package['channels'];
                 $event = $package['name'];
